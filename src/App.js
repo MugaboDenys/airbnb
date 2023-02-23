@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
+import data from './data';
 
 /*
 Challenge: Pass props to the Card component and display that data
@@ -15,11 +16,26 @@ Challenge: Pass props to the Card component and display that data
 */
 
 export default function App() {
+  const cards = data.map(card=>{
+    return(
+          <Card 
+            img = {card.coverImg}
+            rating = {card.stats.rating}
+            reviewCount= {card.stats.reviewCount}
+            country = {card.location}
+            title = {card.description}
+            price = {card.price}
+            openSpots = {card.openSpots}
+          />
+    )
+  })
   // <Hero />
 return (
 <div>
   <Navbar />
-  <Card />
+  <section className="cards-list">
+                {cards}
+            </section>
 </div>
 )
 }
