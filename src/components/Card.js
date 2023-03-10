@@ -7,7 +7,6 @@ export default function Card({openSpots, location, card, coverImg, rating, revie
     } else if (location === "Online" ) {
          badgeText = "ONLINE" 
     }
-    console.log(card)
     return (
         
         <div className="card">
